@@ -6,7 +6,7 @@ export default function Index() {
   return (
     <View className="bg-[#E3C69F] w-screen h-screen">
       <Text></Text>
-      <CustomText variant="large" dark={false}>
+      <CustomText variant="large" dark>
         Hello World
       </CustomText>
     </View>

@@ -2,11 +2,11 @@ import React from 'react';
 import { Text } from 'react-native';
 interface CustomTextProps{
     variant:"small"|"medium"|"large"; //tamaño del texto
-    dark:boolean;// Color claro u oscuro
+    dark?:boolean;// Color claro u oscuro
     children: React.ReactNode;//Va dentro de la etiqueta
 }
 
-const CustomText = ({variant, dark, children}:CustomTextProps) => {
+const CustomText = ({variant, dark=false, children}:CustomTextProps) => {
   return (
      <Text className={styleSelector(variant,dark)}>
         {children}
@@ -16,7 +16,7 @@ const CustomText = ({variant, dark, children}:CustomTextProps) => {
 
 function styleSelector(variant:any,dark:boolean){
     let style = ""
-    if(dark == true){
+    if(dark == false){
         style += "text-white "
     }else{
         style += "text-[#0F626F] "
