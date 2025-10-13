@@ -83,11 +83,12 @@ export default function Index() {
 
     {/* Texto que indica un ¿No tienes cuenta? Regístrate */}
         <View className="mt-8 items-center">
-          <CustomText variant="small" dark={true}>
-            ¿No tienes cuenta? Regístrate
-          </CustomText>
           {/* Boton para navegar entre paginas */}
-          <Link href="/(home)/HomeScreen" className="mt-8 items-center h-15 w-15"> 🐷 </Link>
+          <Link href="/(home)/RegisterScren" className="mt-8 items-center h-15 w-15"> 
+            <CustomText variant="small" dark={true}>
+              ¿No tienes cuenta? Regístrate
+            </CustomText>
+          </Link>
         </View>
       </View>
     </View>
