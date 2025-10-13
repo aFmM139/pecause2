@@ -1,3 +1,5 @@
+//Añadimos importanciones necesarias
+import React from "react";
 import CustomText from "@/components/CustomText";
 import CustomInput from "@/components/CustomInput";
 import CustomButton from "@/components/CustomButton";
@@ -6,26 +8,28 @@ import { View, Alert } from "react-native";
 import { useState } from "react";
 import { Link, router } from "expo-router";
 
+//Funcion para mandar aletaras en el inicio de sesion
 export default function Index() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     if (!email || !password) {
-      Alert.alert("Error", "Por favor completa todos los campos");
+      Alert.alert("Error", "Por favor completa todos los campos");//Cuando se intente inciar sesion pero no se ingrese ningun dato
       return;
     }
     
     console.log("Login:", { email, password });
-    Alert.alert("Éxito", `Bienvenido ${email}`);
+    Alert.alert("Éxito", `Bienvenido ${email}`);//Cuando se ingrese correctamente los datos
 
     router.push("/(home)/HomeScreen");
   };
 
   return (
+    //Agregar los colores de fondo a las paginas
     <View className="bg-[#E3C69F] w-screen h-screen flex justify-center items-center">
       <View className="w-4/5 max-w-md">
-        {/* Título */}
+        {/* Títulos para la bienvenida de la app */}
         <View className="mb-8">
           <CustomText variant="large" dark={true}>
             Bienvenido
@@ -36,7 +40,7 @@ export default function Index() {
           </CustomText>
         </View>
 
-        {/* Email Input */}
+    {/* Parte para ingresar el correo electronico */}
         <View className="mb-4">
           <CustomText variant="small" dark={true}>
             Correo Electrónico
@@ -51,7 +55,7 @@ export default function Index() {
           />
         </View>
 
-        {/* Password Input */}
+    {/* Parte para ingresar la contraseña */}
         <View className="mb-6">
           <CustomText variant="small" dark={true}>
             Contraseña
@@ -65,23 +69,24 @@ export default function Index() {
           />
         </View>
 
-        {/* Login Button */}
+    {/* Boton de inciar sesion */}
         <CustomButton onPress={handleLogin}>
           Iniciar Sesión
         </CustomButton>
 
-        {/* Forgot Password */}
+    {/* Texto que indica un ¿olvidaste tu contraseña? */}
         <View className="mt-4 items-center">
           <CustomText variant="small" dark={true}>
             ¿Olvidaste tu contraseña?
           </CustomText>
         </View>
 
-        {/* Sign Up Link */}
+    {/* Texto que indica un ¿No tienes cuenta? Regístrate */}
         <View className="mt-8 items-center">
           <CustomText variant="small" dark={true}>
             ¿No tienes cuenta? Regístrate
           </CustomText>
+          {/* Boton para navegar entre paginas */}
           <Link href="/(home)/HomeScreen" className="mt-8 items-center h-15 w-15"> 🐷 </Link>
         </View>
       </View>
