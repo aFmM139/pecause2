@@ -23,7 +23,7 @@ export default function RegisterScreen() {
     }
     
     console.log("Register:", { username, email, password });
-    Alert.alert("Éxito", `Bienvenido ${username}, tu cuenta ha sido creada`);
+    Alert.alert(`Bienvenido ${username}, tu cuenta ha sido creada exitosamente`);
     router.push("/(home)/HomeScreen");
   };
 
